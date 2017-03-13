@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8"/>
+	<title>Grayscale and temperature map</title>
+	
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu&amp;subset=cyrillic"/>
+	<link rel="stylesheet" href="styles/index.css"/>
+
+</head>
+<body>
+<header>
+	<h1>Grayscale and temperature map</h1>
+</header>
+<main id=''>
+	<div>
+		<aside class = "ib0">
+			<form class="LD" onsubmit="return false;">
+				<ul>
+					<button class="STbutton" id="load" >Загрузить картинку</button>
+				</ul>
+			</form>
+			<form class="GS" onsubmit="return false;">
+				<button class="STbutton" id="grayscale">Преобразовать в чб</button>
+			</form>
+		</aside>
+		<canvas class = "ib0" width='0' height='0' id='basic'></canvas>
+	</div>
+	<div>
+		<aside class = "ib0">
+			<form class="Cmp" onsubmit="return false;">
+				<button class="STbutton" id="compare">Чб результат фотошопа </button>
+			</form>
+		</aside>
+		<canvas class = "ib0" width='0' height='0' id='addImg'></canvas>
+	</div>
+	<div>
+		<aside class = "ib0">
+			<form class="TM" onsubmit="return false;">
+				<button class="STbutton" id="tempMap">Сделать/пересоздать температурную карту</button>
+			</form>
+			<p class = "ib"> Жёсткость перехода <br> (синий - зелёный): <p><input type="range" min="1" max="64" step="1" id="koef1" value="3"></p></p>
+			<p class = "ib"> Жёсткость перехода <br> (синий - красный): <p><input type="range" min="1" max="64" step="1" id="koef2" value="3"></p></p>
+			<p class = "ib"> Жёсткость перехода <br> (зелёный - красный): <p><input type="range" min="1" max="64" step="1" id="koef3" value="2"></p></p>
+			<p class = "ib"> Жёсткость перехода <br> (уход в красный): <p><input type="range" min="1" max="252" step="1" id="koef4" value="245"></p></p>
+		</aside>
+		<canvas class = "ib0" width='0' height='0' id='result'></canvas>
+	</div>
+</main>
+<div class="">
+</div>
+<script src="scripts/require.js" data-main="scripts/index"></script>
+</body>
+</html>
